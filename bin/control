@@ -6,21 +6,21 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 function start {
   echo "Starting httpd"
-  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -k start
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd.conf -k start
 }
 
 function stop {
   echo "Stopping httpd"
-  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -k stop
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd.conf -k stop
 }
 
 function restart {
   echo "Restarting httpd"
-  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -k restart
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd.conf -k restart
 }
 
 function configtest {
-  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -t
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd.conf -t
 }
 
 function catchall {

@@ -18,7 +18,7 @@ Provides:
 - httpd-proxy-0.1
 - httpd-proxy
 Cart-Data:
-- Key: OPENSHIFT_HTTPD_PROXY_EXAMPLE
+- Key: OPENSHIFT_HTTPDPROXY_EXAMPLE
   Type: environment
   Description: An example environment variable using ERB processing
 Publishes:
