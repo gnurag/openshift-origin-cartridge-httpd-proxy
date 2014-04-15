@@ -8,8 +8,6 @@ case "$1" in
     version="$2"
 esac
 
-source $OPENSHIFT_MOCK_DIR/mock.conf
-
 mkdir -p $MOCK_STATE
 touch $MOCK_STATE/install_called
 
