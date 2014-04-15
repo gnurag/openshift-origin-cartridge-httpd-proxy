@@ -1,0 +1,60 @@
+---
+Name: httpd-proxy
+Cartridge-Short-Name: HTTPDPROXY
+Display-Name: HTTPD Proxy cartridge 0.1
+Source-Url: https://github.com/gnurag/openshift-origin-cartridge-httpd-proxy.git
+Description: A cartridge for using Apache httpd as a reverse proxy server.
+Version: '0.1'
+Versions:
+- '0.1'
+License: ASL 2.0
+Vendor: Red Hat
+Cartridge-Version: 0.0.1
+Cartridge-Vendor: redhat
+Categories:
+- service
+- web_framework
+Provides:
+- httpd-proxy-0.1
+- httpd-proxy
+Cart-Data:
+- Key: OPENSHIFT_HTTPD_PROXY_EXAMPLE
+  Type: environment
+  Description: An example environment variable using ERB processing
+Publishes:
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols: [http]
+  Options:
+    primary: true
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: false
+  - Frontend: /front1a
+    Backend: /back1a
+  - Frontend: /health
+    Backend: ''
+    Options:
+      health: true
+- Private-IP-Name: SSL_IP
+  Private-Port-Name: SSL_PORT
+  Private-Port: 8443
+  Public-Port-Name: SSL_PROXY_PORT
+  Protocols: [https]
+  Options:
+    ssl_to_gear: true
+Scaling:
+  Min: 1
+  Max: -1
+Install-Build-Required: false
+Metrics:
+- uptime

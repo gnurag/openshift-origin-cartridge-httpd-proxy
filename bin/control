@@ -1,0 +1,50 @@
+#!/bin/bash -eu
+
+PATH=/bin/:/usr/bin:$PATH
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+function start {
+  echo "Starting httpd"
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -k start
+}
+
+function stop {
+  echo "Stopping httpd"
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -k stop
+}
+
+function restart {
+  echo "Restarting httpd"
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -k restart
+}
+
+function configtest {
+  /usr/sbin/httpd -f $OPENSHIFT_HTTPD_DIR/etc/httpd.conf -t
+}
+
+function catchall {
+  echo "Not implemented"
+}
+
+case "$1" in
+  start)                start ;;
+  stop)                 stop ;;
+  restart)              restart ;;
+  status)               status ;;
+  reload)               catchall ;;
+  tidy)                 catchall ;;
+  pre-build)            catchall ;;
+  build)                catchall ;;
+  deploy)               catchall ;;
+  post-deploy)          catchall ;;
+  pre-snapshot)         catchall ;;
+  post-snapshot)        catchall ;;
+  pre-restore)          catchall ;;
+  post-restore)         catchall ;;
+  pre-repo-archive)     catchall ;;
+  update-configuration) catchall ;;
+  *)           exit 0
+esac
+
+exit 0
