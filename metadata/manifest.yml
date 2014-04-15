@@ -8,9 +8,9 @@ Version: '0.1'
 Versions:
 - '0.1'
 License: ASL 2.0
-Vendor: Red Hat
+Vendor: Xinh Associates
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: redhat
+Cartridge-Vendor: xinh
 Categories:
 - service
 - web_framework
