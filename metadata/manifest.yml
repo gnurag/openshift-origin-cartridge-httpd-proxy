@@ -1,7 +1,7 @@
 ---
 Name: httpd-proxy
 Cartridge-Short-Name: HTTPDPROXY
-Display-Name: HTTPD Proxy cartridge 0.1
+Display-Name: HTTPD Reverse Proxy cartridge 0.1
 Source-Url: https://github.com/gnurag/openshift-origin-cartridge-httpd-proxy.git
 Description: A cartridge for using Apache httpd as a reverse proxy server.
 Version: '0.1'
