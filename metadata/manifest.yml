@@ -13,6 +13,7 @@ Cartridge-Version: 0.0.1
 Cartridge-Vendor: xinh
 Categories:
 - service
+- web_framework
 Provides:
 - httpd-proxy-0.1
 - httpd-proxy
