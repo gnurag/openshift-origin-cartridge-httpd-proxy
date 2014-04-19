@@ -4,6 +4,8 @@ locked_files:
 - env/*
 - etc/
 - etc/*
+- conf.d/
+- conf.d/*
 - bin/
 - bin/*
 processed_templates:
