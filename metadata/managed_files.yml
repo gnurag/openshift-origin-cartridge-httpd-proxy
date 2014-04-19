@@ -7,4 +7,5 @@ locked_files:
 - bin/
 - bin/*
 processed_templates:
+- 'conf.d/*.erb'
 - '**/*.erb'
