@@ -1,1 +1,3 @@
+#!/bin/bash -e
 
+mv $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd-proxy.conf $OPENSHIFT_DATA_DIR/httpd-proxy/conf.d/
