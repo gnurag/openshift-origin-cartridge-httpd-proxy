@@ -1,0 +1,18 @@
+<VirtualHost <%= ENV['OPENSHIFT_HTTPDPROXY_IP']%>:<%=ENV['OPENSHIFT_HTTPDPROXY_PORT'] %>>
+    ServerName <%= ENV['OPENSHIFT_APP_DNS'] %>
+ 
+    ProxyRequests Off
+    ProxyPreserveHost On
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyPass <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %> <%= ENV['OPENSHIFT_HTTPDPROXY_BACKEND'] %>
+    ProxyPassReverse <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %> <%= ENV['OPENSHIFT_HTTPDPROXY_BACKEND'] %>
+
+    <Location <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %>>
+        Order allow,deny
+        Allow from all
+    </Location>
+</VirtualHost>
