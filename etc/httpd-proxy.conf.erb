@@ -11,8 +11,14 @@
     ProxyPass <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %> <%= ENV['OPENSHIFT_HTTPDPROXY_BACKEND'] %>
     ProxyPassReverse <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %> <%= ENV['OPENSHIFT_HTTPDPROXY_BACKEND'] %>
 
+    Include <%= ENV['OPENSHIFT_REPO_DIR'] %>/conf.d/*.conf
+
     <Location <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %>>
         Order allow,deny
         Allow from all
+    </Location>
+    <Location <%= ENV['OPENSHIFT_HTTPDPROXY_PATH'] %>/conf.d>
+        Order deny,allow
+        Deny from all
     </Location>
 </VirtualHost>
