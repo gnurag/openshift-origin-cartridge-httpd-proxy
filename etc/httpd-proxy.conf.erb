@@ -17,8 +17,8 @@
     # </Location>
 
     # Specify additional configuration for this VirtualHost in <%= ENV['OPENSHIFT_REPO_DIR'] %>/conf.d/httpd-proxy.conf
-    Include <%= ENV['OPENSHIFT_REPO_DIR'] %>/conf.d/httpd-proxy.conf
-    <Location <%= ENV['OPENSHIFT_REPO_DIR'] %>/conf.d>
+    Include <%= ENV['OPENSHIFT_REPO_DIR'] %>conf.d/httpd-proxy.conf
+    <Location <%= ENV['OPENSHIFT_REPO_DIR'] %>conf.d>
         Order deny,allow
         Deny from all
     </Location>
