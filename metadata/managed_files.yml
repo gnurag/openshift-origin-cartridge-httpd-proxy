@@ -10,4 +10,4 @@ locked_files:
 - bin/*
 processed_templates:
 - 'conf.d/*.erb'
-- '**/*.erb'
+- 'etc/*.erb'
