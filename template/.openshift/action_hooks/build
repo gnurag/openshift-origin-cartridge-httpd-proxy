@@ -8,5 +8,8 @@ CONFFILE = File.join(REPO_DIR, 'conf.d', 'httpd-proxy.conf')
 
 if File.file?( TEMPLATE )
   renderer = ERB.new( File.read( TEMPLATE ) )
-  File.write( CONFFILE, renderer.result )
+  f = File.new( CONFFILE, 'w' )
+  f.write( renderer.result )
+  f.close
+  File.delete( TEMPLATE )
 end
