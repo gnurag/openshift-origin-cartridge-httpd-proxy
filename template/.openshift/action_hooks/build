@@ -6,7 +6,7 @@ REPO_DIR = ENV['OPENSHIFT_REPO_DIR']
 TEMPLATE = File.join(REPO_DIR, 'conf.d', 'httpd-proxy.conf.erb')
 CONFFILE = File.join(REPO_DIR, 'conf.d', 'httpd-proxy.conf')
 
-if File.file( TEMPLATE )
+if File.file?( TEMPLATE )
   renderer = ERB.new( File.read( TEMPLATE ) )
   File.write( CONFFILE, renderer.result )
 end
