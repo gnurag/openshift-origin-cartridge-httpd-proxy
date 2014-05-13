@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
-mv $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd-proxy.conf $OPENSHIFT_DATA_DIR/httpd-proxy/conf.d/
+echo "Running install"
+mv $OPENSHIFT_HTTPDPROXY_DIR/etc/httpd-proxy.conf $OPENSHIFT_HTTPDPROXY_DIR/conf.d/

@@ -219,7 +219,6 @@ LoadModule ssl_module modules/mod_ssl.so
 # Load config files from the config directory "/etc/httpd/conf.d".
 #
 Include conf.d/*.conf
-Include <%= ENV['OPENSHIFT_DATA_DIR'] %>/httpd-proxy/conf.d/*.conf
 
 #
 # ExtendedStatus controls whether Apache will generate "full" status
